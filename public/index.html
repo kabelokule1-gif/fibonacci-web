@@ -26,7 +26,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);height:100vh;height:1
 .brand svg{width:24px;height:24px;}
 .t-sep{width:1px;height:20px;background:#2a3460;}
 .spacer{flex:1;}
-.tb{padding:6px 12px;border-radius:6px;border:1px solid #2a3460;background:transparent;font-family:'DM Sans',sans-serif;font-size:.74rem;font-weight:500;color:#a8a8c0;cursor:pointer;white-space:nowrap;touch-action:manipulation;}
+.tb{padding:6px 12px;border-radius:6px;border:1px solid #2a3460;background:transparent;font-family:'DM Sans',sans-serif;font-size:.74rem;font-weight:500;color:#a8a8c0;cursor:pointer;white-space:nowrap;}
 .tb:active{background:#2a3460;color:var(--gold-bright);}
 .canvas-name{font-size:.76rem;color:#c0bcd0;padding:4px 6px;border:1px solid transparent;border-radius:5px;outline:none;font-family:'DM Sans',sans-serif;background:transparent;max-width:110px;}
 .canvas-name:focus{border-color:var(--gold);background:#1e2848;color:var(--gold-bright);}
@@ -34,31 +34,28 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);height:100vh;height:1
 #world{position:absolute;top:0;left:0;transform-origin:0 0;width:0;height:0;}
 #esvg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:visible;}
 .eline{stroke:var(--border-s);stroke-width:1.5;fill:none;pointer-events:stroke;}
-.eline:hover{stroke:var(--gold);}
 #tline{stroke:var(--gold);stroke-width:1.5;stroke-dasharray:5 4;fill:none;pointer-events:none;display:none;}
-#center-ui{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);display:flex;flex-direction:column;align-items:center;gap:18px;z-index:400;pointer-events:none;width:90%;max-width:580px;}
+#center-ui{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);display:flex;flex-direction:column;align-items:center;gap:18px;z-index:50;pointer-events:none;width:90%;max-width:560px;}
 #center-ui.hidden{display:none;}
-.center-phi{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--gold);opacity:.2;line-height:1;}
-.center-title{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--t2);letter-spacing:.08em;text-transform:uppercase;opacity:.45;}
+.center-phi{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--gold);opacity:.2;line-height:1;pointer-events:none;}
+.center-title{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--t2);letter-spacing:.08em;text-transform:uppercase;opacity:.45;pointer-events:none;}
 .sugs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;pointer-events:all;}
-.sug-pill{padding:7px 14px;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:.77rem;color:var(--t2);cursor:pointer;white-space:nowrap;touch-action:manipulation;}
-.sug-pill:active{background:var(--gold-l);border-color:var(--gold-b);color:var(--gold);}
+.sug-pill{padding:7px 14px;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:.77rem;color:var(--t2);cursor:pointer;white-space:nowrap;display:inline-block;}
+.sug-pill:active{background:var(--gold-l);color:var(--gold);}
 .prompt-bar{pointer-events:all;display:flex;align-items:center;background:var(--white);border:1.5px solid var(--border-s);border-radius:100px;padding:6px 6px 6px 18px;box-shadow:var(--sh-m);width:100%;}
 .prompt-bar:focus-within{border-color:var(--gold);}
 .prompt-bar input{flex:1;border:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:.88rem;color:var(--text);outline:none;min-width:0;}
 .prompt-bar input::placeholder{color:var(--t3);}
-.pb-send{width:38px;height:38px;border-radius:50%;background:var(--navy);border:none;cursor:pointer;color:var(--gold-bright);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;touch-action:manipulation;-webkit-appearance:none;position:relative;z-index:500;}
+.pb-send{width:40px;height:40px;border-radius:50%;background:var(--navy);border:none;cursor:pointer;color:var(--gold-bright);font-size:1.3rem;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
 .pb-send:active{background:var(--gold);color:var(--navy);}
-.card{position:absolute;background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh-m);cursor:default;user-select:none;min-width:240px;}
-.card:hover{box-shadow:var(--sh-l);}
+.card{position:absolute;background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh-m);user-select:none;min-width:240px;z-index:10;}
 .card.sel{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-l),var(--sh-m);}
-.card.csrc{border-color:var(--green);box-shadow:0 0 0 3px var(--green-l),var(--sh-m);}
-.chandle{display:flex;align-items:center;gap:8px;padding:11px 13px 8px;border-radius:var(--r) var(--r) 0 0;touch-action:none;cursor:grab;}
-.chandle:active{cursor:grabbing;}
+.card.csrc{border-color:var(--green);}
+.chandle{display:flex;align-items:center;gap:8px;padding:11px 13px 8px;border-radius:var(--r) var(--r) 0 0;}
 .cicon{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;}
 .ctitle{font-size:.8rem;font-weight:600;color:var(--t2);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .cacts{display:flex;gap:3px;}
-.cact{width:28px;height:28px;border-radius:4px;background:none;border:none;cursor:pointer;color:var(--t3);font-size:.8rem;display:flex;align-items:center;justify-content:center;touch-action:manipulation;}
+.cact{width:28px;height:28px;border-radius:4px;background:none;border:none;cursor:pointer;color:var(--t3);font-size:.8rem;display:flex;align-items:center;justify-content:center;}
 .cact:active{background:var(--bg);color:var(--text);}
 .card.chat{max-width:320px;}
 .chat-msgs{padding:0 13px 10px;display:flex;flex-direction:column;gap:7px;max-height:260px;overflow-y:auto;-webkit-overflow-scrolling:touch;}
@@ -71,11 +68,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);height:100vh;height:1
 .chat-row{display:flex;align-items:center;gap:6px;padding:7px 13px 12px;border-top:1px solid var(--border);}
 .chat-row input{flex:1;border:none;background:var(--bg);padding:7px 10px;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:.8rem;color:var(--text);outline:none;}
 .chat-row input::placeholder{color:var(--t3);}
-.sbtn{width:32px;height:32px;border-radius:6px;background:var(--navy);border:none;cursor:pointer;color:var(--gold-bright);display:flex;align-items:center;justify-content:center;flex-shrink:0;touch-action:manipulation;-webkit-appearance:none;}
+.sbtn{width:34px;height:34px;border-radius:6px;background:var(--navy);border:none;cursor:pointer;color:var(--gold-bright);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .sbtn:active{background:var(--gold);color:var(--navy);}
-.sbtn svg{width:12px;height:12px;}
+.sbtn svg{width:13px;height:13px;}
 .quick-sugs{display:flex;flex-wrap:wrap;gap:5px;padding:0 13px 10px;}
-.qs{padding:4px 10px;border-radius:20px;border:1px solid var(--gold-b);background:var(--gold-l);color:var(--gold);font-size:.7rem;font-weight:500;cursor:pointer;touch-action:manipulation;}
+.qs{padding:5px 11px;border-radius:20px;border:1px solid var(--gold-b);background:var(--gold-l);color:var(--gold);font-size:.7rem;font-weight:500;cursor:pointer;display:inline-block;}
 .qs:active{background:var(--gold);color:#fff;}
 .card.text{max-width:320px;}
 .tbody{padding:4px 13px 14px;font-size:.8rem;line-height:1.65;color:var(--text);max-height:240px;overflow-y:auto;-webkit-overflow-scrolling:touch;}
@@ -98,17 +95,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);height:100vh;height:1
 .url-link{font-size:.7rem;color:var(--gold);word-break:break-all;text-decoration:none;font-family:'DM Mono',monospace;display:block;margin-bottom:5px;}
 .url-summary{margin-top:6px;padding:7px 9px;background:var(--bg);border-radius:6px;font-size:.76rem;line-height:1.5;color:var(--text);border:1px solid var(--border);}
 .url-btn-row{display:flex;gap:6px;margin-top:8px;}
-.url-btn{flex:1;padding:6px;border-radius:6px;border:1px solid var(--border);background:var(--white);font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:500;color:var(--t2);cursor:pointer;text-align:center;touch-action:manipulation;}
-.url-btn:active{background:var(--gold-l);border-color:var(--gold-b);color:var(--gold);}
+.url-btn{flex:1;padding:6px;border-radius:6px;border:1px solid var(--border);background:var(--white);font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:500;color:var(--t2);cursor:pointer;text-align:center;}
+.url-btn:active{background:var(--gold-l);color:var(--gold);}
 .url-warn{font-size:.7rem;color:var(--t3);margin-top:5px;font-style:italic;}
-.card.spider{border-radius:50%;min-width:0;max-width:none;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;font-size:.72rem;font-weight:600;line-height:1.2;touch-action:none;cursor:grab;}
-.card.spider:active{cursor:grabbing;}
+.card.spider{border-radius:50%;min-width:0;max-width:none;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;font-size:.72rem;font-weight:600;line-height:1.2;}
 .card.spider.main{width:100px;height:100px;background:var(--navy);color:var(--gold-bright);border-color:var(--navy);font-size:.78rem;box-shadow:0 4px 20px rgba(26,35,64,.3);}
 .card.spider.sub{width:80px;height:80px;background:var(--white);color:var(--navy);border-color:var(--navy-b);}
 .card.spider.idea{width:64px;height:64px;background:var(--white);color:var(--t2);border-color:var(--border-s);font-size:.66rem;}
-#bt{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:4px;background:var(--navy);border:1px solid #2a3460;border-radius:100px;padding:7px 14px;box-shadow:0 8px 32px rgba(26,35,64,.25);z-index:200;}
+#bt{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:4px;background:var(--navy);border:1px solid #2a3460;border-radius:100px;padding:7px 14px;box-shadow:0 8px 32px rgba(26,35,64,.25);z-index:50;}
 .bt-sep{width:1px;height:18px;background:#2a3460;}
-.btb{width:36px;height:36px;border-radius:50%;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#8890b0;touch-action:manipulation;}
+.btb{width:38px;height:38px;border-radius:50%;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#8890b0;}
 .btb:active,.btb.on{background:var(--gold);color:var(--navy);}
 .btb svg{width:15px;height:15px;}
 .zoom-val{font-family:'DM Mono',monospace;font-size:.72rem;color:#8890b0;min-width:38px;text-align:center;}
@@ -131,9 +127,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);height:100vh;height:1
   <div class="t-sep"></div>
   <input class="canvas-name" id="canvas-name" value="Untitled" type="text" spellcheck="false">
   <div class="spacer"></div>
-  <button class="tb" id="btn-save">💾</button>
-  <button class="tb" id="btn-load">📂</button>
-  <button class="tb" id="btn-new">＋</button>
+  <button class="tb" onclick="saveCanvas()">💾</button>
+  <button class="tb" onclick="loadCanvas()">📂</button>
+  <button class="tb" onclick="newCanvas()">＋</button>
 </div>
 
 <div id="cw">
@@ -143,33 +139,33 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);height:100vh;height:1
     <div class="center-phi">φ</div>
     <div class="center-title">The Fibonacci Web</div>
     <div class="sugs">
-      <span class="sug-pill" data-prompt="Research this topic and map out the key ideas">🔍 Research a topic</span>
-      <span class="sug-pill" data-prompt="Create a comparison matrix of these ideas">⊞ Compare ideas</span>
-      <span class="sug-pill" data-prompt="What are the main sub-topics I should explore?">🌿 Sub-topics</span>
+      <span class="sug-pill" onclick="pillClick(this)" data-prompt="Research this topic and map out the key ideas">🔍 Research a topic</span>
+      <span class="sug-pill" onclick="pillClick(this)" data-prompt="Create a comparison matrix of these ideas">⊞ Compare ideas</span>
+      <span class="sug-pill" onclick="pillClick(this)" data-prompt="What are the main sub-topics I should explore?">🌿 Sub-topics</span>
     </div>
     <div class="prompt-bar">
-      <input id="main-input" type="text" placeholder="Ask, research, or drop a URL…" autocomplete="off">
-      <button class="pb-send" id="main-send">→</button>
+      <input id="main-input" type="text" placeholder="Ask, research, or drop a URL…" autocomplete="off" onkeydown="if(event.key==='Enter')doMainSend()">
+      <button class="pb-send" onclick="doMainSend()">→</button>
     </div>
     <div class="sugs">
-      <span class="sug-pill" data-prompt="Build a spider map about the future of electric vehicles">🕸 Spider map</span>
-      <span class="sug-pill" data-url="true">🔗 Add a URL</span>
-      <span class="sug-pill" data-prompt="What are the latest trends in AI tools?">✦ AI trends</span>
+      <span class="sug-pill" onclick="pillClick(this)" data-prompt="Build a spider map about the future of electric vehicles">🕸 Spider map</span>
+      <span class="sug-pill" onclick="addURLCard()" data-url="true">🔗 Add a URL</span>
+      <span class="sug-pill" onclick="pillClick(this)" data-prompt="What are the latest trends in AI tools?">✦ AI trends</span>
     </div>
   </div>
   <div id="bt">
-    <button class="btb on" id="bt-select"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2l10 6-5 1-2 5z"/></svg></button>
-    <button class="btb" id="bt-connect"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="3.5" cy="8" r="2"/><circle cx="12.5" cy="8" r="2"/><path d="M5.5 8h5"/></svg></button>
+    <button class="btb on" id="bt-select" onclick="setConnectMode(false)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2l10 6-5 1-2 5z"/></svg></button>
+    <button class="btb" id="bt-connect" onclick="setConnectMode(!connectMode)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="3.5" cy="8" r="2"/><circle cx="12.5" cy="8" r="2"/><path d="M5.5 8h5"/></svg></button>
     <div class="bt-sep"></div>
-    <button class="btb" id="bt-chat"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 10a2 2 0 01-2 2H5l-3 3V4a2 2 0 012-2h8a2 2 0 012 2z"/></svg></button>
-    <button class="btb" id="bt-note"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 6h6M5 9h4"/></svg></button>
-    <button class="btb" id="bt-url"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.5 9.5a3.5 3.5 0 005 0l2-2a3.5 3.5 0 00-5-5L7 4"/><path d="M9.5 6.5a3.5 3.5 0 00-5 0l-2 2a3.5 3.5 0 005 5L9 12"/></svg></button>
-    <button class="btb" id="bt-spider"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2"/><path d="M8 2v2M8 12v2M2 8h2M12 8h2M4 4l1.5 1.5M10.5 10.5L12 12M12 4l-1.5 1.5M5.5 10.5L4 12"/></svg></button>
+    <button class="btb" onclick="addCard('chat',{title:'AI Chat',messages:[]})"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 10a2 2 0 01-2 2H5l-3 3V4a2 2 0 012-2h8a2 2 0 012 2z"/></svg></button>
+    <button class="btb" onclick="addCard('note',{title:'Note',text:''})"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 6h6M5 9h4"/></svg></button>
+    <button class="btb" onclick="addURLCard()"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.5 9.5a3.5 3.5 0 005 0l2-2a3.5 3.5 0 00-5-5L7 4"/><path d="M9.5 6.5a3.5 3.5 0 00-5 0l-2 2a3.5 3.5 0 005 5L9 12"/></svg></button>
+    <button class="btb" onclick="addSpiderNode()"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2"/><path d="M8 2v2M8 12v2M2 8h2M12 8h2M4 4l1.5 1.5M10.5 10.5L12 12M12 4l-1.5 1.5M5.5 10.5L4 12"/></svg></button>
     <div class="bt-sep"></div>
-    <button class="btb" id="bt-zi"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="4"/><path d="M10.5 10.5l3 3M5 7h4M7 5v4"/></svg></button>
+    <button class="btb" onclick="zoomIn()"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="4"/><path d="M10.5 10.5l3 3M5 7h4M7 5v4"/></svg></button>
     <span class="zoom-val" id="zlbl">100%</span>
-    <button class="btb" id="bt-zo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="4"/><path d="M10.5 10.5l3 3M5 7h4"/></svg></button>
-    <button class="btb" id="bt-fit"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4"/></svg></button>
+    <button class="btb" onclick="zoomOut()"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="4"/><path d="M10.5 10.5l3 3M5 7h4"/></svg></button>
+    <button class="btb" onclick="fitView()"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4"/></svg></button>
   </div>
   <div id="mhint"></div>
 </div>
@@ -196,14 +192,10 @@ function ccenter(){const r=cw.getBoundingClientRect();return sc2cv(r.width/2,r.h
 function scatter(n=100){return(Math.random()-.5)*n;}
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2500);}
 function updateCenterUI(){centerUI.classList.toggle('hidden',cards.length>0);}
-function getPoint(e){if(e.touches&&e.touches.length>0)return{x:e.touches[0].clientX,y:e.touches[0].clientY};return{x:e.clientX,y:e.clientY};}
 
-// Bind button with both click and touchend
-function bindBtn(id,fn){
-  const el=document.getElementById(id);
-  if(!el)return;
-  el.addEventListener('click',fn);
-  el.addEventListener('touchend',function(e){e.preventDefault();e.stopPropagation();fn();});
+function getPoint(e){
+  if(e.touches&&e.touches.length>0)return{x:e.touches[0].clientX,y:e.touches[0].clientY};
+  return{x:e.clientX,y:e.clientY};
 }
 
 async function callAPI(body){
@@ -244,66 +236,47 @@ function renderMD(t){
   return(t||'').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/###\s(.+)/g,'<h3>$1</h3>').replace(/\n\n/g,'</p><p>').replace(/\n/g,'<br>').replace(/^(.)/,'<p>$1').replace(/(.)$/,'$1</p>');
 }
 
-const ACTS=id=>`<div class="cacts"><button class="cact" data-action="connect" data-id="${id}">⟶</button><button class="cact" data-action="delete" data-id="${id}">✕</button></div>`;
+const ACTS=id=>`<div class="cacts"><button class="cact" onclick="setConnectMode(true);handleConnect('${id}')">⟶</button><button class="cact" onclick="deleteCard('${id}')">✕</button></div>`;
 
 function buildHTML(c){
   if(c.type==='spider')return`<span>${esc(c.data.label||'')}</span>`;
   if(c.type==='chat'){
     const msgs=(c.data.messages||[]).map(m=>`<div class="msg ${m.role==='user'?'u':'a'}">${esc(m.text)}</div>`).join('');
-    return`<div class="chandle" data-drag="${c.id}"><div class="cicon" style="background:var(--navy-l);color:var(--navy)">💬</div><div class="ctitle">${esc(c.data.title||'AI Chat')}</div>${ACTS(c.id)}</div><div class="chat-msgs" id="msgs-${c.id}">${msgs}</div><div class="quick-sugs"><span class="qs" data-sug="Search the web for this topic">🔍 Search</span><span class="qs" data-sug="Create a comparison matrix">⊞ Matrix</span><span class="qs" data-sug="What sub-topics should I explore?">🌿 Sub-topics</span><span class="qs" data-sug="Summarise what we've discussed">φ Summarise</span></div><div class="chat-row"><input type="text" id="inp-${c.id}" placeholder="Ask anything…" autocomplete="off"><button class="sbtn" id="send-${c.id}"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8l12-6-5 6 5 6z"/></svg></button></div>`;
+    return`<div class="chandle" data-id="${c.id}"><div class="cicon" style="background:var(--navy-l);color:var(--navy)">💬</div><div class="ctitle">${esc(c.data.title||'AI Chat')}</div>${ACTS(c.id)}</div>
+<div class="chat-msgs" id="msgs-${c.id}">${msgs}</div>
+<div class="quick-sugs">
+  <span class="qs" onclick="qsSend('${c.id}','Search the web for this topic')">🔍 Search</span>
+  <span class="qs" onclick="qsSend('${c.id}','Create a comparison matrix')">⊞ Matrix</span>
+  <span class="qs" onclick="qsSend('${c.id}','What sub-topics should I explore?')">🌿 Sub-topics</span>
+  <span class="qs" onclick="qsSend('${c.id}','Summarise what we have discussed')">φ Summarise</span>
+</div>
+<div class="chat-row">
+  <input type="text" id="inp-${c.id}" placeholder="Ask anything…" autocomplete="off" onkeydown="if(event.key==='Enter')doSend('${c.id}')">
+  <button class="sbtn" onclick="doSend('${c.id}')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8l12-6-5 6 5 6z"/></svg></button>
+</div>`;
   }
-  if(c.type==='text')return`<div class="chandle" data-drag="${c.id}"><div class="cicon" style="background:var(--amber-l);color:var(--amber)">📄</div><div class="ctitle">${esc(c.data.title||'Response')}</div>${ACTS(c.id)}</div><div class="tbody">${renderMD(c.data.content||'')}</div>`;
+  if(c.type==='text')return`<div class="chandle" data-id="${c.id}"><div class="cicon" style="background:var(--amber-l);color:var(--amber)">📄</div><div class="ctitle">${esc(c.data.title||'Response')}</div>${ACTS(c.id)}</div><div class="tbody">${renderMD(c.data.content||'')}</div>`;
   if(c.type==='matrix'){
     const cols=c.data.cols||[];
     let tbl=`<table class="mtable"><thead><tr><th></th>${cols.map(col=>`<th>${esc(col)}</th>`).join('')}</tr></thead><tbody>`;
     (c.data.rows||[]).forEach(r=>{tbl+=`<tr><td class="rh">${esc(r.label)}</td>${(r.cells||[]).map(cell=>`<td>${esc(cell)}</td>`).join('')}</tr>`;});
-    return`<div class="chandle" data-drag="${c.id}"><div class="cicon" style="background:var(--purple-l);color:var(--purple)">⊞</div><div class="ctitle">${esc(c.data.title||'Matrix')}</div>${ACTS(c.id)}</div>${tbl}</table>`;
+    return`<div class="chandle" data-id="${c.id}"><div class="cicon" style="background:var(--purple-l);color:var(--purple)">⊞</div><div class="ctitle">${esc(c.data.title||'Matrix')}</div>${ACTS(c.id)}</div>${tbl}</table>`;
   }
-  if(c.type==='note')return`<div class="chandle" data-drag="${c.id}"><div class="cicon" style="background:var(--green-l);color:var(--green)">📝</div><div class="ctitle">${esc(c.data.title||'Note')}</div>${ACTS(c.id)}</div><div class="nbody"><textarea id="note-${c.id}" placeholder="Write anything…">${esc(c.data.text||'')}</textarea></div>`;
+  if(c.type==='note')return`<div class="chandle" data-id="${c.id}"><div class="cicon" style="background:var(--green-l);color:var(--green)">📝</div><div class="ctitle">${esc(c.data.title||'Note')}</div>${ACTS(c.id)}</div><div class="nbody"><textarea id="note-${c.id}" placeholder="Write anything…" oninput="saveNote('${c.id}',this.value)">${esc(c.data.text||'')}</textarea></div>`;
 
 if(c.type===‘url’){
 const p=c.data.platform||‘def’;const col=pColors[p];
 const summary=c.data.summary?`<div class="url-summary">🤖 ${esc(c.data.summary)}</div>`:’’;
 const warn=(p===‘ig’||p===‘tt’)?`<div class="url-warn">⚠️ ${pNames[p]} is login-walled</div>`:’’;
-const btns=!c.data.summary?`<div class="url-btn-row"><button class="url-btn" data-action="summarise" data-id="${c.id}">🤖 AI Summarise</button><button class="url-btn" data-action="expand" data-id="${c.id}">🌿 Expand to map</button></div>`:’’;
-return`<div class="platform-bar pb-${p}"></div><div class="chandle" data-drag="${c.id}"><div class="cicon" style="background:${col}18;color:${col};font-size:1rem">${pIcons[p]}</div><div class="ctitle">${esc(c.data.cardTitle||pNames[p])}</div>${ACTS(c.id)}</div><div class="url-body"><a class="url-link" href="${esc(c.data.url||'')}" target="_blank" rel="noopener">${esc(c.data.url||'')}</a>${summary}${warn}${btns}</div>`;
+const btns=!c.data.summary?`<div class="url-btn-row"><button class="url-btn" onclick="aiSummarise('${c.id}')">🤖 AI Summarise</button><button class="url-btn" onclick="aiExpand('${c.id}')">🌿 Expand to map</button></div>`:’’;
+return`<div class="platform-bar pb-${p}"></div><div class="chandle" data-id="${c.id}"><div class="cicon" style="background:${col}18;color:${col};font-size:1rem">${pIcons[p]}</div><div class="ctitle">${esc(c.data.cardTitle||pNames[p])}</div>${ACTS(c.id)}</div><div class="url-body"><a class="url-link" href="${esc(c.data.url||'')}" target="_blank" rel="noopener">${esc(c.data.url||'')}</a>${summary}${warn}${btns}</div>`;
 }
 return’’;
 }
 
-// Universal drag for any element
-function makeDraggable(el, getPos, setPos){
-let sx,sy,ox,oy,moved=false;
-function onStart(e){
-if(connectMode)return;
-if(e.target.closest(‘button’)||e.target.closest(‘input’)||e.target.closest(‘textarea’)||e.target.closest(‘a’))return;
-e.stopPropagation();
-const pt=getPoint(e);
-sx=pt.x;sy=pt.y;
-const pos=getPos();ox=pos.x;oy=pos.y;moved=false;
-document.addEventListener(‘mousemove’,onMove);
-document.addEventListener(‘mouseup’,onEnd);
-document.addEventListener(‘touchmove’,onMove,{passive:false});
-document.addEventListener(‘touchend’,onEnd);
-}
-function onMove(e){
-if(e.cancelable)e.preventDefault();
-const pt=getPoint(e);
-const dx=(pt.x-sx)/zoom,dy=(pt.y-sy)/zoom;
-if(Math.abs(dx)>3||Math.abs(dy)>3)moved=true;
-if(!moved)return;
-setPos(ox+dx,oy+dy);
-renderEdges();
-}
-function onEnd(){
-document.removeEventListener(‘mousemove’,onMove);document.removeEventListener(‘mouseup’,onEnd);
-document.removeEventListener(‘touchmove’,onMove);document.removeEventListener(‘touchend’,onEnd);
-return moved;
-}
-el.addEventListener(‘mousedown’,onStart);
-el.addEventListener(‘touchstart’,onStart,{passive:false});
-return ()=>moved;
-}
+function saveNote(id,val){const c=cards.find(x=>x.id===id);if(c)c.data.text=val;}
+function qsSend(id,text){const inp=document.getElementById(‘inp-’+id);if(inp){inp.value=text;doSend(id);}}
+function doSend(id){const c=cards.find(x=>x.id===id);const inp=document.getElementById(‘inp-’+id);if(!c||!inp)return;const t=inp.value.trim();if(!t)return;inp.value=’’;chatSend(c,t);}
 
 function buildCard(c,isNew=false){
 let el=document.getElementById(‘card-’+c.id);
@@ -312,67 +285,54 @@ el.className=‘card ‘+c.type+(c.type===‘spider’?’ ‘+(c.data.role||‘
 el.style.left=c.x+‘px’;el.style.top=c.y+‘px’;
 if(c.type===‘spider’){const sz={main:100,sub:80,idea:64}[c.data.role||‘sub’]||80;el.style.width=sz+‘px’;el.style.height=sz+‘px’;}
 el.innerHTML=buildHTML(c);
-bindCard(el,c);
+addDragToCard(el,c);
 if(isNew)setTimeout(()=>el.classList.remove(‘popin’),300);
 return el;
 }
 
-function rebuildCard(c){const el=document.getElementById(‘card-’+c.id);if(!el)return buildCard(c);el.innerHTML=buildHTML(c);bindCard(el,c);}
+function rebuildCard(c){const el=document.getElementById(‘card-’+c.id);if(!el)return buildCard(c);el.innerHTML=buildHTML(c);addDragToCard(el,c);}
 
-function bindCard(el,c){
-if(c.type===‘spider’){
-let moved=false;
-makeDraggable(el,()=>({x:c.x,y:c.y}),(x,y)=>{c.x=x;c.y=y;el.style.left=x+‘px’;el.style.top=y+‘px’;});
-el.addEventListener(‘click’,()=>{if(!connectMode)selectCard(c.id);});
-el.addEventListener(‘touchend’,e=>{if(!connectMode&&e.target===el)selectCard(c.id);});
-} else {
-const handle=el.querySelector(’[data-drag]’);
-if(handle){
-makeDraggable(handle,()=>({x:c.x,y:c.y}),(x,y)=>{c.x=x;c.y=y;el.style.left=x+‘px’;el.style.top=y+‘px’;});
-}
-}
+function addDragToCard(el,c){
+const handle=c.type===‘spider’?el:el.querySelector(’[data-id]’);
+if(!handle)return;
+let sx,sy,ox,oy,moved=false;
 
-el.addEventListener(‘click’,e=>{
-const btn=e.target.closest(’[data-action]’);if(!btn)return;
-const{action,id}=btn.dataset;
-if(action===‘delete’)deleteCard(id);
-if(action===‘connect’){setConnectMode(true);handleConnect(id);}
-if(action===‘summarise’)aiSummarise(id);
-if(action===‘expand’)aiExpand(id);
+handle.addEventListener(‘pointerdown’,e=>{
+if(e.target.tagName===‘BUTTON’||e.target.tagName===‘INPUT’||e.target.tagName===‘TEXTAREA’||e.target.tagName===‘A’||e.target.tagName===‘SPAN’)return;
+if(connectMode){handleConnect(c.id);return;}
+e.stopPropagation();
+handle.setPointerCapture(e.pointerId);
+sx=e.clientX;sy=e.clientY;ox=c.x;oy=c.y;moved=false;
 });
 
-el.querySelectorAll(’.qs’).forEach(s=>{
-const fn=()=>{const inp=document.getElementById(‘inp-’+c.id);if(inp){inp.value=s.dataset.sug;doSend(c);}};
-s.addEventListener(‘click’,fn);
-s.addEventListener(‘touchend’,e=>{e.preventDefault();fn();});
+handle.addEventListener(‘pointermove’,e=>{
+if(!handle.hasPointerCapture(e.pointerId))return;
+const dx=(e.clientX-sx)/zoom,dy=(e.clientY-sy)/zoom;
+if(Math.abs(dx)>3||Math.abs(dy)>3)moved=true;
+if(!moved)return;
+c.x=ox+dx;c.y=oy+dy;
+el.style.left=c.x+‘px’;el.style.top=c.y+‘px’;
+renderEdges();
 });
 
-const sendBtn=document.getElementById(‘send-’+c.id);
-const inp=document.getElementById(‘inp-’+c.id);
-if(sendBtn&&inp){
-const fn=()=>doSend(c);
-sendBtn.addEventListener(‘click’,fn);
-sendBtn.addEventListener(‘touchend’,e=>{e.preventDefault();e.stopPropagation();fn();});
-inp.addEventListener(‘keydown’,e=>{if(e.key===‘Enter’)fn();});
-}
-
-const nt=document.getElementById(‘note-’+c.id);
-if(nt)nt.addEventListener(‘input’,()=>c.data.text=nt.value);
-}
-
-function doSend(c){
-const inp=document.getElementById(‘inp-’+c.id);if(!inp)return;
-const t=inp.value.trim();if(!t)return;
-inp.value=’’;chatSend(c,t);
+handle.addEventListener(‘pointerup’,e=>{
+if(!moved&&c.type===‘spider’&&!connectMode)selectCard(c.id);
+});
 }
 
 function selectCard(id){selectedId=id;document.querySelectorAll(’.card’).forEach(el=>el.classList.remove(‘sel’));document.getElementById(‘card-’+id)?.classList.add(‘sel’);}
 function deleteCard(id){cards=cards.filter(c=>c.id!==id);edges=edges.filter(e=>e.from!==id&&e.to!==id);document.getElementById(‘card-’+id)?.remove();renderEdges();updateCenterUI();}
-function addCard(type,data={},ox=0,oy=0){const cc=ccenter();const c={id:uid(),type,x:cc.x+ox+scatter(),y:cc.y+oy+scatter(),data:{…data}};cards.push(c);buildCard(c,true);updateCenterUI();return c;}
+
+function addCard(type,data={},ox=0,oy=0){
+const cc=ccenter();
+const c={id:uid(),type,x:cc.x+ox+scatter(),y:cc.y+oy+scatter(),data:{…data}};
+cards.push(c);buildCard(c,true);updateCenterUI();return c;
+}
 
 function setConnectMode(on){
 connectMode=on;
 document.getElementById(‘bt-connect’).classList.toggle(‘on’,on);
+document.getElementById(‘bt-select’).classList.toggle(‘on’,!on);
 mhint.textContent=on?(connectSrc?‘Tap TARGET card’:‘Tap SOURCE card’):’’;
 mhint.classList.toggle(‘on’,on);
 if(!on){connectSrc=null;tline.style.display=‘none’;document.querySelectorAll(’.csrc’).forEach(el=>el.classList.remove(‘csrc’));}
@@ -383,59 +343,73 @@ if(!connectSrc){connectSrc=id;document.getElementById(‘card-’+id)?.classList
 else{if(id!==connectSrc&&!edges.find(e=>(e.from===connectSrc&&e.to===id)||(e.from===id&&e.to===connectSrc)))edges.push({id:euid(),from:connectSrc,to:id});renderEdges();setConnectMode(false);}
 }
 
-// PAN + ZOOM
-let panActive=false,panStart={x:0,y:0};
-let pinchActive=false,pinchStartDist=0,pinchStartZoom=1,pinchStartPan={x:0,y:0};
+// PAN + ZOOM using Pointer Events on canvas background only
+let panPointerId=null,panStartX=0,panStartY=0,panStartPanX=0,panStartPanY=0;
+let pinchIds=[],pinchStartDist=0,pinchStartZoom=1,pinchStartPan={x:0,y:0};
 
-cw.addEventListener(‘mousedown’,e=>{
-if(e.target!==cw&&e.target.id!==‘world’&&!e.target.closest(’#esvg’))return;
+cw.addEventListener(‘pointerdown’,e=>{
+const isCanvas=e.target===cw||e.target.id===‘world’||e.target.closest(’#esvg’);
+if(!isCanvas)return;
 if(connectMode){setConnectMode(false);return;}
-panActive=true;panStart={x:e.clientX-pan.x,y:e.clientY-pan.y};
+e.preventDefault();
+cw.setPointerCapture(e.pointerId);
+if(pinchIds.length===0&&panPointerId===null){
+panPointerId=e.pointerId;
+panStartX=e.clientX;panStartY=e.clientY;
+panStartPanX=pan.x;panStartPanY=pan.y;
+} else if(pinchIds.length<2){
+pinchIds.push(e.pointerId);
+if(pinchIds.length===2){
+panPointerId=null;
+// will compute on move
+}
+}
 });
 
+cw.addEventListener(‘pointermove’,e=>{
+if(pinchIds.includes(e.pointerId)){
+// handled below
+}
+if(e.pointerId===panPointerId){
+pan.x=panStartPanX+(e.clientX-panStartX);
+pan.y=panStartPanY+(e.clientY-panStartY);
+applyT();renderEdges();
+}
+});
+
+cw.addEventListener(‘pointerup’,e=>{
+if(e.pointerId===panPointerId)panPointerId=null;
+pinchIds=pinchIds.filter(id=>id!==e.pointerId);
+});
+
+// Better pinch via touchstart/touchmove on canvas only
 cw.addEventListener(‘touchstart’,e=>{
-if(e.target.closest(’.prompt-bar’)||e.target.closest(’#center-ui’)||e.target.closest(’#bt’)||e.target.closest(’.card’))return;
-const target=e.target;
-const onCanvas=target===cw||target.id===‘world’||target.tagName===‘svg’||target.tagName===‘g’||target.tagName===‘path’;
-if(!onCanvas)return;
-if(connectMode){setConnectMode(false);return;}
 if(e.touches.length===2){
-pinchActive=true;panActive=false;
+const isCanvas=e.target===cw||e.target.id===‘world’||e.target.closest(’#esvg’);
+if(!isCanvas)return;
 pinchStartDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
 pinchStartZoom=zoom;pinchStartPan={x:pan.x,y:pan.y};
-return;
+panPointerId=null;
 }
-panActive=true;panStart={x:e.touches[0].clientX-pan.x,y:e.touches[0].clientY-pan.y};
 },{passive:true});
 
-document.addEventListener(‘mousemove’,e=>{
-if(!panActive)return;
-pan.x=e.clientX-panStart.x;pan.y=e.clientY-panStart.y;
-applyT();renderEdges();
-});
-
-document.addEventListener(‘touchmove’,e=>{
-if(e.touches.length===2&&pinchActive){
-if(e.cancelable)e.preventDefault();
+cw.addEventListener(‘touchmove’,e=>{
+if(e.touches.length===2){
+const isCanvas=e.target===cw||e.target.id===‘world’||e.target.closest(’#esvg’);
+if(!isCanvas)return;
+e.preventDefault();
 const dist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
 const f=dist/pinchStartDist;
-const midX=(e.touches[0].clientX+e.touches[1].clientX)/2;
-const midY=(e.touches[0].clientY+e.touches[1].clientY)/2;
+const mx=(e.touches[0].clientX+e.touches[1].clientX)/2;
+const my=(e.touches[0].clientY+e.touches[1].clientY)/2;
 const r=cw.getBoundingClientRect();
-const mx=midX-r.left,my=midY-r.top;
+const cx=mx-r.left,cy=my-r.top;
 const nz=Math.min(3,Math.max(.1,pinchStartZoom*f));
-pan.x=mx-(mx-pinchStartPan.x)*(nz/pinchStartZoom);
-pan.y=my-(my-pinchStartPan.y)*(nz/pinchStartZoom);
+pan.x=cx-(cx-pinchStartPan.x)*(nz/pinchStartZoom);
+pan.y=cy-(cy-pinchStartPan.y)*(nz/pinchStartZoom);
 zoom=nz;applyT();renderEdges();updateZoom();
-return;
 }
-if(!panActive)return;
-pan.x=e.touches[0].clientX-panStart.x;pan.y=e.touches[0].clientY-panStart.y;
-applyT();renderEdges();
 },{passive:false});
-
-document.addEventListener(‘mouseup’,()=>{panActive=false;});
-document.addEventListener(‘touchend’,()=>{panActive=false;pinchActive=false;});
 
 cw.addEventListener(‘wheel’,e=>{
 e.preventDefault();
@@ -448,6 +422,8 @@ applyT();renderEdges();updateZoom();
 
 function applyT(){world.style.transform=`translate(${pan.x}px,${pan.y}px) scale(${zoom})`;world.style.transformOrigin=‘0 0’;}
 function updateZoom(){document.getElementById(‘zlbl’).textContent=Math.round(zoom*100)+’%’;}
+function zoomIn(){zoom=Math.min(3,zoom*1.15);applyT();renderEdges();updateZoom();}
+function zoomOut(){zoom=Math.max(.1,zoom/1.15);applyT();renderEdges();updateZoom();}
 function fitView(){
 if(!cards.length){pan={x:0,y:0};zoom=1;applyT();renderEdges();updateZoom();return;}
 const xs=cards.map(c=>c.x),ys=cards.map(c=>c.y),pad=100;
@@ -458,24 +434,10 @@ pan.x=(W-(maxX+minX)*zoom)/2;pan.y=(H-(maxY+minY)*zoom)/2;
 applyT();renderEdges();updateZoom();
 }
 
-bindBtn(‘bt-select’,()=>setConnectMode(false));
-bindBtn(‘bt-connect’,()=>setConnectMode(!connectMode));
-bindBtn(‘bt-zi’,()=>{zoom=Math.min(3,zoom*1.15);applyT();renderEdges();updateZoom();});
-bindBtn(‘bt-zo’,()=>{zoom=Math.max(.1,zoom/1.15);applyT();renderEdges();updateZoom();});
-bindBtn(‘bt-fit’,fitView);
-bindBtn(‘bt-chat’,()=>addCard(‘chat’,{title:‘AI Chat’,messages:[]}));
-bindBtn(‘bt-note’,()=>addCard(‘note’,{title:‘Note’,text:’’}));
-bindBtn(‘bt-spider’,()=>{const l=prompt(‘Node label:’,‘Idea’);if(!l)return;const r=prompt(‘Role: main / sub / idea’,‘sub’)||‘sub’;addCard(‘spider’,{label:l,role:r});});
-bindBtn(‘bt-url’,addURLCard);
-bindBtn(‘btn-save’,()=>{const name=document.getElementById(‘canvas-name’).value||‘Untitled’;localStorage.setItem(‘fib_’+name,JSON.stringify({cards,edges,nextId}));showToast(‘Saved ✓’);});
-bindBtn(‘btn-load’,()=>{const name=document.getElementById(‘canvas-name’).value||‘Untitled’;const s=localStorage.getItem(‘fib_’+name);if(!s){showToast(‘Nothing saved’);return;}const d=JSON.parse(s);cards=d.cards;edges=d.edges;nextId=d.nextId||1;world.innerHTML=’’;eg.innerHTML=’’;cards.forEach(c=>buildCard(c));renderEdges();updateCenterUI();fitView();showToast(‘Loaded ✓’);});
-bindBtn(‘btn-new’,()=>{if(cards.length&&!confirm(‘New canvas?’))return;cards=[];edges=[];world.innerHTML=’’;eg.innerHTML=’’;document.getElementById(‘canvas-name’).value=‘Untitled’;updateCenterUI();showToast(‘New canvas’);});
-
-function addURLCard(){
-const url=prompt(‘Paste a URL:’,‘https://’);if(!url||url===‘https://’)return;
-const platform=detectPlatform(url);
-const c=addCard(‘url’,{url,platform,cardTitle:pNames[platform]||‘Link’,summary:null});
-if(platform===‘art’||platform===‘yt’||platform===‘x’)setTimeout(()=>aiSummarise(c.id),400);
+function pillClick(el){
+if(el.dataset.url){addURLCard();return;}
+document.getElementById(‘main-input’).value=el.dataset.prompt||’’;
+doMainSend();
 }
 
 function doMainSend(){
@@ -486,14 +448,18 @@ const c=addCard(‘chat’,{title:‘AI Chat’,messages:[]});
 setTimeout(()=>chatSend(c,text),100);
 }
 
-document.querySelectorAll(’.sug-pill’).forEach(pill=>{
-const fn=()=>{if(pill.dataset.url){addURLCard();return;}const inp=document.getElementById(‘main-input’);if(inp)inp.value=pill.dataset.prompt||’’;doMainSend();};
-pill.addEventListener(‘click’,fn);
-pill.addEventListener(‘touchend’,e=>{e.preventDefault();fn();});
-});
+function addURLCard(){
+const url=prompt(‘Paste a URL:’,‘https://’);if(!url||url===‘https://’)return;
+const platform=detectPlatform(url);
+const c=addCard(‘url’,{url,platform,cardTitle:pNames[platform]||‘Link’,summary:null});
+if(platform===‘art’||platform===‘yt’||platform===‘x’)setTimeout(()=>aiSummarise(c.id),400);
+}
 
-bindBtn(‘main-send’,doMainSend);
-document.getElementById(‘main-input’).addEventListener(‘keydown’,e=>{if(e.key===‘Enter’)doMainSend();});
+function addSpiderNode(){
+const l=prompt(‘Node label:’,‘Idea’);if(!l)return;
+const r=prompt(‘Role: main / sub / idea’,‘sub’)||‘sub’;
+addCard(‘spider’,{label:l,role:r});
+}
 
 async function chatSend(c,text){
 if(!c.data.messages)c.data.messages=[];
@@ -563,6 +529,10 @@ edges.push({id:euid(),from:sub.id,to:ic.id});
 renderEdges();fitView();showToast(‘Done ✓’);
 }catch(err){showToast(’Error: ’+err.message);}
 }
+
+function saveCanvas(){const name=document.getElementById(‘canvas-name’).value||‘Untitled’;localStorage.setItem(‘fib_’+name,JSON.stringify({cards,edges,nextId}));showToast(‘Saved ✓’);}
+function loadCanvas(){const name=document.getElementById(‘canvas-name’).value||‘Untitled’;const s=localStorage.getItem(‘fib_’+name);if(!s){showToast(‘Nothing saved’);return;}const d=JSON.parse(s);cards=d.cards;edges=d.edges;nextId=d.nextId||1;world.innerHTML=’’;eg.innerHTML=’’;cards.forEach(c=>buildCard(c));renderEdges();updateCenterUI();fitView();showToast(‘Loaded ✓’);}
+function newCanvas(){if(cards.length&&!confirm(‘New canvas?’))return;cards=[];edges=[];world.innerHTML=’’;eg.innerHTML=’’;document.getElementById(‘canvas-name’).value=‘Untitled’;updateCenterUI();showToast(‘New canvas’);}
 
 document.addEventListener(‘keydown’,e=>{
 if(e.key===‘Escape’)setConnectMode(false);
