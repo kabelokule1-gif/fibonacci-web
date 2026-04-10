@@ -17,7 +17,6 @@
   --purple:#5c3d8f;--purple-l:#f3f0f9;
   --sh-m:0 4px 16px rgba(0,0,0,.08),0 1px 4px rgba(0,0,0,.04);
   --sh-l:0 8px 32px rgba(0,0,0,.10),0 2px 8px rgba(0,0,0,.05);
-  --sh-gold:0 4px 20px rgba(184,134,11,.18);
   --r:10px;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
@@ -27,7 +26,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);height:100vh;height:1
 .brand svg{width:24px;height:24px;}
 .t-sep{width:1px;height:20px;background:#2a3460;}
 .spacer{flex:1;}
-.tb{padding:5px 10px;border-radius:6px;border:1px solid #2a3460;background:transparent;font-family:'DM Sans',sans-serif;font-size:.74rem;font-weight:500;color:#a8a8c0;cursor:pointer;white-space:nowrap;}
+.tb{padding:6px 12px;border-radius:6px;border:1px solid #2a3460;background:transparent;font-family:'DM Sans',sans-serif;font-size:.74rem;font-weight:500;color:#a8a8c0;cursor:pointer;white-space:nowrap;touch-action:manipulation;}
 .tb:active{background:#2a3460;color:var(--gold-bright);}
 .canvas-name{font-size:.76rem;color:#c0bcd0;padding:4px 6px;border:1px solid transparent;border-radius:5px;outline:none;font-family:'DM Sans',sans-serif;background:transparent;max-width:110px;}
 .canvas-name:focus{border-color:var(--gold);background:#1e2848;color:var(--gold-bright);}
@@ -37,29 +36,29 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);height:100vh;height:1
 .eline{stroke:var(--border-s);stroke-width:1.5;fill:none;pointer-events:stroke;}
 .eline:hover{stroke:var(--gold);}
 #tline{stroke:var(--gold);stroke-width:1.5;stroke-dasharray:5 4;fill:none;pointer-events:none;display:none;}
-/* CENTER UI */
 #center-ui{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);display:flex;flex-direction:column;align-items:center;gap:18px;z-index:200;pointer-events:none;width:90%;max-width:580px;}
 #center-ui.hidden{display:none;}
 .center-phi{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--gold);opacity:.2;line-height:1;}
 .center-title{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--t2);letter-spacing:.08em;text-transform:uppercase;opacity:.45;}
 .sugs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;pointer-events:all;}
-.sug-pill{padding:7px 14px;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:.77rem;color:var(--t2);cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.06);white-space:nowrap;}
+.sug-pill{padding:7px 14px;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:.77rem;color:var(--t2);cursor:pointer;white-space:nowrap;touch-action:manipulation;}
 .sug-pill:active{background:var(--gold-l);border-color:var(--gold-b);color:var(--gold);}
 .prompt-bar{pointer-events:all;display:flex;align-items:center;background:var(--white);border:1.5px solid var(--border-s);border-radius:100px;padding:6px 6px 6px 18px;box-shadow:var(--sh-m);width:100%;}
 .prompt-bar:focus-within{border-color:var(--gold);}
 .prompt-bar input{flex:1;border:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:.88rem;color:var(--text);outline:none;min-width:0;}
 .prompt-bar input::placeholder{color:var(--t3);}
-.pb-send{width:36px;height:36px;border-radius:50%;background:var(--navy);border:none;cursor:pointer;color:var(--gold-bright);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.pb-send{width:38px;height:38px;border-radius:50%;background:var(--navy);border:none;cursor:pointer;color:var(--gold-bright);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;touch-action:manipulation;-webkit-appearance:none;position:relative;z-index:10;}
 .pb-send:active{background:var(--gold);color:var(--navy);}
-/* CARDS */
 .card{position:absolute;background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh-m);cursor:default;user-select:none;min-width:240px;}
+.card:hover{box-shadow:var(--sh-l);}
 .card.sel{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-l),var(--sh-m);}
 .card.csrc{border-color:var(--green);box-shadow:0 0 0 3px var(--green-l),var(--sh-m);}
-.chandle{display:flex;align-items:center;gap:8px;padding:11px 13px 8px;border-radius:var(--r) var(--r) 0 0;touch-action:none;}
+.chandle{display:flex;align-items:center;gap:8px;padding:11px 13px 8px;border-radius:var(--r) var(--r) 0 0;touch-action:none;cursor:grab;}
+.chandle:active{cursor:grabbing;}
 .cicon{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;}
 .ctitle{font-size:.8rem;font-weight:600;color:var(--t2);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .cacts{display:flex;gap:3px;}
-.cact{width:26px;height:26px;border-radius:4px;background:none;border:none;cursor:pointer;color:var(--t3);font-size:.8rem;display:flex;align-items:center;justify-content:center;}
+.cact{width:28px;height:28px;border-radius:4px;background:none;border:none;cursor:pointer;color:var(--t3);font-size:.8rem;display:flex;align-items:center;justify-content:center;touch-action:manipulation;}
 .cact:active{background:var(--bg);color:var(--text);}
 .card.chat{max-width:320px;}
 .chat-msgs{padding:0 13px 10px;display:flex;flex-direction:column;gap:7px;max-height:260px;overflow-y:auto;-webkit-overflow-scrolling:touch;}
@@ -72,17 +71,17 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);height:100vh;height:1
 .chat-row{display:flex;align-items:center;gap:6px;padding:7px 13px 12px;border-top:1px solid var(--border);}
 .chat-row input{flex:1;border:none;background:var(--bg);padding:7px 10px;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:.8rem;color:var(--text);outline:none;}
 .chat-row input::placeholder{color:var(--t3);}
-.sbtn{width:32px;height:32px;border-radius:6px;background:var(--navy);border:none;cursor:pointer;color:var(--gold-bright);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.sbtn{width:32px;height:32px;border-radius:6px;background:var(--navy);border:none;cursor:pointer;color:var(--gold-bright);display:flex;align-items:center;justify-content:center;flex-shrink:0;touch-action:manipulation;-webkit-appearance:none;}
 .sbtn:active{background:var(--gold);color:var(--navy);}
 .sbtn svg{width:12px;height:12px;}
 .quick-sugs{display:flex;flex-wrap:wrap;gap:5px;padding:0 13px 10px;}
-.qs{padding:4px 10px;border-radius:20px;border:1px solid var(--gold-b);background:var(--gold-l);color:var(--gold);font-size:.7rem;font-weight:500;cursor:pointer;}
+.qs{padding:4px 10px;border-radius:20px;border:1px solid var(--gold-b);background:var(--gold-l);color:var(--gold);font-size:.7rem;font-weight:500;cursor:pointer;touch-action:manipulation;}
 .qs:active{background:var(--gold);color:#fff;}
 .card.text{max-width:320px;}
 .tbody{padding:4px 13px 14px;font-size:.8rem;line-height:1.65;color:var(--text);max-height:240px;overflow-y:auto;-webkit-overflow-scrolling:touch;}
 .tbody h3{font-size:.83rem;font-weight:600;margin:8px 0 4px;color:var(--navy);}
 .tbody p{margin-bottom:5px;}
-.card.matrix{max-width:94vw;min-width:280px;}
+.card.matrix{max-width:92vw;min-width:260px;}
 .mtable{width:calc(100% - 26px);border-collapse:collapse;font-size:.74rem;margin:0 13px 13px;}
 .mtable th{padding:6px 8px;text-align:left;background:var(--navy);color:var(--gold-bright);font-weight:600;border:1px solid #2a3460;font-size:.68rem;}
 .mtable td{padding:6px 8px;border:1px solid var(--border);color:var(--text);vertical-align:top;line-height:1.4;}
@@ -99,17 +98,17 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);height:100vh;height:1
 .url-link{font-size:.7rem;color:var(--gold);word-break:break-all;text-decoration:none;font-family:'DM Mono',monospace;display:block;margin-bottom:5px;}
 .url-summary{margin-top:6px;padding:7px 9px;background:var(--bg);border-radius:6px;font-size:.76rem;line-height:1.5;color:var(--text);border:1px solid var(--border);}
 .url-btn-row{display:flex;gap:6px;margin-top:8px;}
-.url-btn{flex:1;padding:6px;border-radius:6px;border:1px solid var(--border);background:var(--white);font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:500;color:var(--t2);cursor:pointer;text-align:center;}
+.url-btn{flex:1;padding:6px;border-radius:6px;border:1px solid var(--border);background:var(--white);font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:500;color:var(--t2);cursor:pointer;text-align:center;touch-action:manipulation;}
 .url-btn:active{background:var(--gold-l);border-color:var(--gold-b);color:var(--gold);}
 .url-warn{font-size:.7rem;color:var(--t3);margin-top:5px;font-style:italic;}
-.card.spider{border-radius:50%;min-width:0;max-width:none;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;font-size:.72rem;font-weight:600;line-height:1.2;touch-action:none;}
+.card.spider{border-radius:50%;min-width:0;max-width:none;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;font-size:.72rem;font-weight:600;line-height:1.2;touch-action:none;cursor:grab;}
+.card.spider:active{cursor:grabbing;}
 .card.spider.main{width:100px;height:100px;background:var(--navy);color:var(--gold-bright);border-color:var(--navy);font-size:.78rem;box-shadow:0 4px 20px rgba(26,35,64,.3);}
 .card.spider.sub{width:80px;height:80px;background:var(--white);color:var(--navy);border-color:var(--navy-b);}
 .card.spider.idea{width:64px;height:64px;background:var(--white);color:var(--t2);border-color:var(--border-s);font-size:.66rem;}
-/* BOTTOM TOOLBAR */
 #bt{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:4px;background:var(--navy);border:1px solid #2a3460;border-radius:100px;padding:7px 14px;box-shadow:0 8px 32px rgba(26,35,64,.25);z-index:200;}
 .bt-sep{width:1px;height:18px;background:#2a3460;}
-.btb{width:34px;height:34px;border-radius:50%;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#8890b0;}
+.btb{width:36px;height:36px;border-radius:50%;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#8890b0;touch-action:manipulation;}
 .btb:active,.btb.on{background:var(--gold);color:var(--navy);}
 .btb svg{width:15px;height:15px;}
 .zoom-val{font-family:'DM Mono',monospace;font-size:.72rem;color:#8890b0;min-width:38px;text-align:center;}
@@ -140,7 +139,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);height:100vh;height:1
 <div id="cw">
   <svg id="esvg"><g id="eg"></g><path id="tline"/></svg>
   <div id="world"></div>
-
   <div id="center-ui">
     <div class="center-phi">φ</div>
     <div class="center-title">The Fibonacci Web</div>
@@ -159,51 +157,28 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);height:100vh;height:1
       <span class="sug-pill" data-prompt="What are the latest trends in AI tools?">✦ AI trends</span>
     </div>
   </div>
-
   <div id="bt">
-    <button class="btb on" id="bt-select" title="Select">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2l10 6-5 1-2 5z"/></svg>
-    </button>
-    <button class="btb" id="bt-connect" title="Connect">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="3.5" cy="8" r="2"/><circle cx="12.5" cy="8" r="2"/><path d="M5.5 8h5"/></svg>
-    </button>
+    <button class="btb on" id="bt-select"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2l10 6-5 1-2 5z"/></svg></button>
+    <button class="btb" id="bt-connect"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="3.5" cy="8" r="2"/><circle cx="12.5" cy="8" r="2"/><path d="M5.5 8h5"/></svg></button>
     <div class="bt-sep"></div>
-    <button class="btb" id="bt-chat" title="Chat">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 10a2 2 0 01-2 2H5l-3 3V4a2 2 0 012-2h8a2 2 0 012 2z"/></svg>
-    </button>
-    <button class="btb" id="bt-note" title="Note">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 6h6M5 9h4"/></svg>
-    </button>
-    <button class="btb" id="bt-url" title="URL">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.5 9.5a3.5 3.5 0 005 0l2-2a3.5 3.5 0 00-5-5L7 4"/><path d="M9.5 6.5a3.5 3.5 0 00-5 0l-2 2a3.5 3.5 0 005 5L9 12"/></svg>
-    </button>
-    <button class="btb" id="bt-spider" title="Spider node">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2"/><path d="M8 2v2M8 12v2M2 8h2M12 8h2M4 4l1.5 1.5M10.5 10.5L12 12M12 4l-1.5 1.5M5.5 10.5L4 12"/></svg>
-    </button>
+    <button class="btb" id="bt-chat"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 10a2 2 0 01-2 2H5l-3 3V4a2 2 0 012-2h8a2 2 0 012 2z"/></svg></button>
+    <button class="btb" id="bt-note"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 6h6M5 9h4"/></svg></button>
+    <button class="btb" id="bt-url"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.5 9.5a3.5 3.5 0 005 0l2-2a3.5 3.5 0 00-5-5L7 4"/><path d="M9.5 6.5a3.5 3.5 0 00-5 0l-2 2a3.5 3.5 0 005 5L9 12"/></svg></button>
+    <button class="btb" id="bt-spider"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2"/><path d="M8 2v2M8 12v2M2 8h2M12 8h2M4 4l1.5 1.5M10.5 10.5L12 12M12 4l-1.5 1.5M5.5 10.5L4 12"/></svg></button>
     <div class="bt-sep"></div>
-    <button class="btb" id="bt-zi">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="4"/><path d="M10.5 10.5l3 3M5 7h4M7 5v4"/></svg>
-    </button>
+    <button class="btb" id="bt-zi"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="4"/><path d="M10.5 10.5l3 3M5 7h4M7 5v4"/></svg></button>
     <span class="zoom-val" id="zlbl">100%</span>
-    <button class="btb" id="bt-zo">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="4"/><path d="M10.5 10.5l3 3M5 7h4"/></svg>
-    </button>
-    <button class="btb" id="bt-fit">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4"/></svg>
-    </button>
+    <button class="btb" id="bt-zo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="4"/><path d="M10.5 10.5l3 3M5 7h4"/></svg></button>
+    <button class="btb" id="bt-fit"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4"/></svg></button>
   </div>
   <div id="mhint"></div>
 </div>
 <div id="toast"></div>
 
 <script>
-// ═══════════════════════════
-// STATE
-// ═══════════════════════════
 let cards=[],edges=[],nextId=1;
 let pan={x:0,y:0},zoom=1;
-let connectMode=false,connectSrc=null;
-let selectedId=null;
+let connectMode=false,connectSrc=null,selectedId=null;
 
 const world=document.getElementById('world');
 const eg=document.getElementById('eg');
@@ -212,9 +187,6 @@ const mhint=document.getElementById('mhint');
 const cw=document.getElementById('cw');
 const centerUI=document.getElementById('center-ui');
 
-// ═══════════════════════════
-// UTILS
-// ═══════════════════════════
 const uid=()=>'c'+(nextId++);
 const euid=()=>'e'+Date.now().toString(36)+Math.random().toString(36).slice(2,5);
 const esc=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -224,18 +196,16 @@ function ccenter(){const r=cw.getBoundingClientRect();return sc2cv(r.width/2,r.h
 function scatter(n=100){return(Math.random()-.5)*n;}
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2500);}
 function updateCenterUI(){centerUI.classList.toggle('hidden',cards.length>0);}
+function getPoint(e){if(e.touches&&e.touches.length>0)return{x:e.touches[0].clientX,y:e.touches[0].clientY};return{x:e.clientX,y:e.clientY};}
 
-// ═══════════════════════════
-// POINTER UTILS (mouse + touch unified)
-// ═══════════════════════════
-function getPoint(e){
-  if(e.touches) return {x:e.touches[0].clientX,y:e.touches[0].clientY};
-  return {x:e.clientX,y:e.clientY};
+// Bind button with both click and touchend
+function bindBtn(id,fn){
+  const el=document.getElementById(id);
+  if(!el)return;
+  el.addEventListener('click',fn);
+  el.addEventListener('touchend',function(e){e.preventDefault();e.stopPropagation();fn();});
 }
 
-// ═══════════════════════════
-// API
-// ═══════════════════════════
 async function callAPI(body){
   const res=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
   const data=await res.json();
@@ -243,9 +213,6 @@ async function callAPI(body){
   return data;
 }
 
-// ═══════════════════════════
-// PLATFORM
-// ═══════════════════════════
 function detectPlatform(url){
   const u=(url||'').toLowerCase();
   if(u.includes('youtube.com')||u.includes('youtu.be'))return'yt';
@@ -258,9 +225,6 @@ const pNames={yt:'YouTube',ig:'Instagram',x:'X / Twitter',tt:'TikTok',art:'Artic
 const pIcons={yt:'▶',ig:'📷',x:'𝕏',tt:'♪',art:'📰',def:'🔗'};
 const pColors={yt:'#ff0000',ig:'#e1306c',x:'#000',tt:'#EE1D52',art:'var(--navy)',def:'var(--t3)'};
 
-// ═══════════════════════════
-// EDGES
-// ═══════════════════════════
 function renderEdges(){
   eg.innerHTML='';
   edges.forEach(e=>{
@@ -282,9 +246,6 @@ function renderMD(t){
 
 const ACTS=id=>`<div class="cacts"><button class="cact" data-action="connect" data-id="${id}">⟶</button><button class="cact" data-action="delete" data-id="${id}">✕</button></div>`;
 
-// ═══════════════════════════
-// CARD HTML
-// ═══════════════════════════
 function buildHTML(c){
   if(c.type==='spider')return`<span>${esc(c.data.label||'')}</span>`;
   if(c.type==='chat'){
@@ -310,55 +271,40 @@ return`<div class="platform-bar pb-${p}"></div><div class="chandle" data-drag="$
 return’’;
 }
 
-// ═══════════════════════════
-// DRAGGABLE ELEMENT
-// Makes any element draggable with both mouse and touch
-// ═══════════════════════════
-function makeDraggable(el, c){
-let startX,startY,startCX,startCY,isDragging=false;
-
+// Universal drag for any element
+function makeDraggable(el, getPos, setPos){
+let sx,sy,ox,oy,moved=false;
 function onStart(e){
-if(connectMode){handleConnect(c.id);return;}
-// Don’t drag if tapping buttons/inputs
+if(connectMode)return;
 if(e.target.closest(‘button’)||e.target.closest(‘input’)||e.target.closest(‘textarea’)||e.target.closest(‘a’))return;
 e.stopPropagation();
 const pt=getPoint(e);
-startX=pt.x;startY=pt.y;
-startCX=c.x;startCY=c.y;
-isDragging=false;
+sx=pt.x;sy=pt.y;
+const pos=getPos();ox=pos.x;oy=pos.y;moved=false;
 document.addEventListener(‘mousemove’,onMove);
 document.addEventListener(‘mouseup’,onEnd);
 document.addEventListener(‘touchmove’,onMove,{passive:false});
 document.addEventListener(‘touchend’,onEnd);
 }
-
 function onMove(e){
 if(e.cancelable)e.preventDefault();
 const pt=getPoint(e);
-const dx=pt.x-startX,dy=pt.y-startY;
-if(Math.abs(dx)>4||Math.abs(dy)>4)isDragging=true;
-if(!isDragging)return;
-c.x=startCX+dx/zoom;
-c.y=startCY+dy/zoom;
-el.style.left=c.x+‘px’;
-el.style.top=c.y+‘px’;
+const dx=(pt.x-sx)/zoom,dy=(pt.y-sy)/zoom;
+if(Math.abs(dx)>3||Math.abs(dy)>3)moved=true;
+if(!moved)return;
+setPos(ox+dx,oy+dy);
 renderEdges();
 }
-
 function onEnd(){
-document.removeEventListener(‘mousemove’,onMove);
-document.removeEventListener(‘mouseup’,onEnd);
-document.removeEventListener(‘touchmove’,onMove);
-document.removeEventListener(‘touchend’,onEnd);
+document.removeEventListener(‘mousemove’,onMove);document.removeEventListener(‘mouseup’,onEnd);
+document.removeEventListener(‘touchmove’,onMove);document.removeEventListener(‘touchend’,onEnd);
+return moved;
 }
-
 el.addEventListener(‘mousedown’,onStart);
 el.addEventListener(‘touchstart’,onStart,{passive:false});
+return ()=>moved;
 }
 
-// ═══════════════════════════
-// BUILD CARD
-// ═══════════════════════════
 function buildCard(c,isNew=false){
 let el=document.getElementById(‘card-’+c.id);
 if(!el){el=document.createElement(‘div’);el.id=‘card-’+c.id;world.appendChild(el);}
@@ -374,16 +320,18 @@ return el;
 function rebuildCard(c){const el=document.getElementById(‘card-’+c.id);if(!el)return buildCard(c);el.innerHTML=buildHTML(c);bindCard(el,c);}
 
 function bindCard(el,c){
-// Make draggable via handle or whole card for spider
-const handle=el.querySelector(’[data-drag]’)||(c.type===‘spider’?el:null);
-if(handle) makeDraggable(handle,c);
-
 if(c.type===‘spider’){
-el.addEventListener(‘click’,e=>{if(!connectMode&&!e.target.closest(‘button’))selectCard(c.id);});
-el.addEventListener(‘touchend’,e=>{if(!connectMode)selectCard(c.id);},{passive:true});
+let moved=false;
+makeDraggable(el,()=>({x:c.x,y:c.y}),(x,y)=>{c.x=x;c.y=y;el.style.left=x+‘px’;el.style.top=y+‘px’;});
+el.addEventListener(‘click’,()=>{if(!connectMode)selectCard(c.id);});
+el.addEventListener(‘touchend’,e=>{if(!connectMode&&e.target===el)selectCard(c.id);});
+} else {
+const handle=el.querySelector(’[data-drag]’);
+if(handle){
+makeDraggable(handle,()=>({x:c.x,y:c.y}),(x,y)=>{c.x=x;c.y=y;el.style.left=x+‘px’;el.style.top=y+‘px’;});
+}
 }
 
-// Action buttons
 el.addEventListener(‘click’,e=>{
 const btn=e.target.closest(’[data-action]’);if(!btn)return;
 const{action,id}=btn.dataset;
@@ -393,33 +341,35 @@ if(action===‘summarise’)aiSummarise(id);
 if(action===‘expand’)aiExpand(id);
 });
 
-// Quick suggestions
-el.querySelectorAll(’.qs’).forEach(s=>s.addEventListener(‘click’,()=>{
-const inp=document.getElementById(‘inp-’+c.id);
-if(inp){inp.value=s.dataset.sug;document.getElementById(‘send-’+c.id)?.click();}
-}));
+el.querySelectorAll(’.qs’).forEach(s=>{
+const fn=()=>{const inp=document.getElementById(‘inp-’+c.id);if(inp){inp.value=s.dataset.sug;doSend(c);}};
+s.addEventListener(‘click’,fn);
+s.addEventListener(‘touchend’,e=>{e.preventDefault();fn();});
+});
 
-// Chat send
-const send=document.getElementById(‘send-’+c.id);
+const sendBtn=document.getElementById(‘send-’+c.id);
 const inp=document.getElementById(‘inp-’+c.id);
-if(send&&inp){
-const go=()=>{const t=inp.value.trim();if(!t)return;inp.value=’’;chatSend(c,t);};
-send.addEventListener(‘click’,go);
-inp.addEventListener(‘keydown’,e=>{if(e.key===‘Enter’)go();});
+if(sendBtn&&inp){
+const fn=()=>doSend(c);
+sendBtn.addEventListener(‘click’,fn);
+sendBtn.addEventListener(‘touchend’,e=>{e.preventDefault();e.stopPropagation();fn();});
+inp.addEventListener(‘keydown’,e=>{if(e.key===‘Enter’)fn();});
 }
 
-// Note
 const nt=document.getElementById(‘note-’+c.id);
 if(nt)nt.addEventListener(‘input’,()=>c.data.text=nt.value);
+}
+
+function doSend(c){
+const inp=document.getElementById(‘inp-’+c.id);if(!inp)return;
+const t=inp.value.trim();if(!t)return;
+inp.value=’’;chatSend(c,t);
 }
 
 function selectCard(id){selectedId=id;document.querySelectorAll(’.card’).forEach(el=>el.classList.remove(‘sel’));document.getElementById(‘card-’+id)?.classList.add(‘sel’);}
 function deleteCard(id){cards=cards.filter(c=>c.id!==id);edges=edges.filter(e=>e.from!==id&&e.to!==id);document.getElementById(‘card-’+id)?.remove();renderEdges();updateCenterUI();}
 function addCard(type,data={},ox=0,oy=0){const cc=ccenter();const c={id:uid(),type,x:cc.x+ox+scatter(),y:cc.y+oy+scatter(),data:{…data}};cards.push(c);buildCard(c,true);updateCenterUI();return c;}
 
-// ═══════════════════════════
-// CONNECT MODE
-// ═══════════════════════════
 function setConnectMode(on){
 connectMode=on;
 document.getElementById(‘bt-connect’).classList.toggle(‘on’,on);
@@ -430,88 +380,62 @@ if(!on){connectSrc=null;tline.style.display=‘none’;document.querySelectorAll
 
 function handleConnect(id){
 if(!connectSrc){connectSrc=id;document.getElementById(‘card-’+id)?.classList.add(‘csrc’);mhint.textContent=‘Tap TARGET card’;tline.style.display=’’;}
-else{
-if(id!==connectSrc&&!edges.find(e=>(e.from===connectSrc&&e.to===id)||(e.from===id&&e.to===connectSrc)))
-edges.push({id:euid(),from:connectSrc,to:id});
-renderEdges();setConnectMode(false);
-}
+else{if(id!==connectSrc&&!edges.find(e=>(e.from===connectSrc&&e.to===id)||(e.from===id&&e.to===connectSrc)))edges.push({id:euid(),from:connectSrc,to:id});renderEdges();setConnectMode(false);}
 }
 
-// ═══════════════════════════
-// PAN + ZOOM (mouse + touch + pinch)
-// ═══════════════════════════
+// PAN + ZOOM
 let panActive=false,panStart={x:0,y:0};
-let pinchActive=false,pinchStartDist=0,pinchStartZoom=1;
-let lastTouchCount=0;
+let pinchActive=false,pinchStartDist=0,pinchStartZoom=1,pinchStartPan={x:0,y:0};
 
-function onCanvasPointerStart(e){
+cw.addEventListener(‘mousedown’,e=>{
 if(e.target!==cw&&e.target.id!==‘world’&&!e.target.closest(’#esvg’))return;
 if(connectMode){setConnectMode(false);return;}
+panActive=true;panStart={x:e.clientX-pan.x,y:e.clientY-pan.y};
+});
 
-if(e.touches){
-lastTouchCount=e.touches.length;
+cw.addEventListener(‘touchstart’,e=>{
+const target=e.target;
+const onCanvas=target===cw||target.id===‘world’||target.tagName===‘svg’||target.tagName===‘g’||target.tagName===‘path’;
+if(!onCanvas)return;
+if(connectMode){setConnectMode(false);return;}
 if(e.touches.length===2){
-// Pinch to zoom
 pinchActive=true;panActive=false;
 pinchStartDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
-pinchStartZoom=zoom;
+pinchStartZoom=zoom;pinchStartPan={x:pan.x,y:pan.y};
 return;
 }
-if(e.touches.length===1){
-panActive=true;
-panStart={x:e.touches[0].clientX-pan.x,y:e.touches[0].clientY-pan.y};
-}
-}else{
-panActive=true;
-panStart={x:e.clientX-pan.x,y:e.clientY-pan.y};
-}
-}
+panActive=true;panStart={x:e.touches[0].clientX-pan.x,y:e.touches[0].clientY-pan.y};
+},{passive:true});
 
-function onCanvasPointerMove(e){
-if(e.touches&&e.touches.length===2&&pinchActive){
-e.preventDefault();
+document.addEventListener(‘mousemove’,e=>{
+if(!panActive)return;
+pan.x=e.clientX-panStart.x;pan.y=e.clientY-panStart.y;
+applyT();renderEdges();
+});
+
+document.addEventListener(‘touchmove’,e=>{
+if(e.touches.length===2&&pinchActive){
+if(e.cancelable)e.preventDefault();
 const dist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
 const f=dist/pinchStartDist;
 const midX=(e.touches[0].clientX+e.touches[1].clientX)/2;
 const midY=(e.touches[0].clientY+e.touches[1].clientY)/2;
 const r=cw.getBoundingClientRect();
 const mx=midX-r.left,my=midY-r.top;
-const newZoom=Math.min(3,Math.max(.1,pinchStartZoom*f));
-pan.x=mx-(mx-pan.x)*(newZoom/zoom);
-pan.y=my-(my-pan.y)*(newZoom/zoom);
-zoom=newZoom;
-applyT();renderEdges();updateZoom();
+const nz=Math.min(3,Math.max(.1,pinchStartZoom*f));
+pan.x=mx-(mx-pinchStartPan.x)*(nz/pinchStartZoom);
+pan.y=my-(my-pinchStartPan.y)*(nz/pinchStartZoom);
+zoom=nz;applyT();renderEdges();updateZoom();
 return;
 }
-
 if(!panActive)return;
-if(e.cancelable&&e.touches)e.preventDefault();
-const pt=getPoint(e);
-pan.x=pt.x-panStart.x;
-pan.y=pt.y-panStart.y;
+pan.x=e.touches[0].clientX-panStart.x;pan.y=e.touches[0].clientY-panStart.y;
 applyT();renderEdges();
+},{passive:false});
 
-// Update connect line
-if(connectMode&&connectSrc){
-const src=cards.find(c=>c.id===connectSrc);if(!src)return;
-const ss=cv2sc(src.x,src.y);const r=cw.getBoundingClientRect();
-tline.setAttribute(‘d’,`M${ss.x},${ss.y} Q${(ss.x+pt.x-r.left)/2},${(ss.y+pt.y-r.top)/2} ${pt.x-r.left},${pt.y-r.top}`);
-}
-}
+document.addEventListener(‘mouseup’,()=>{panActive=false;});
+document.addEventListener(‘touchend’,()=>{panActive=false;pinchActive=false;});
 
-function onCanvasPointerEnd(){
-panActive=false;pinchActive=false;
-}
-
-// Canvas events
-cw.addEventListener(‘mousedown’,onCanvasPointerStart);
-cw.addEventListener(‘touchstart’,onCanvasPointerStart,{passive:false});
-document.addEventListener(‘mousemove’,onCanvasPointerMove);
-document.addEventListener(‘touchmove’,onCanvasPointerMove,{passive:false});
-document.addEventListener(‘mouseup’,onCanvasPointerEnd);
-document.addEventListener(‘touchend’,onCanvasPointerEnd);
-
-// Scroll zoom
 cw.addEventListener(‘wheel’,e=>{
 e.preventDefault();
 const f=e.deltaY<0?1.07:.94;
@@ -533,22 +457,19 @@ pan.x=(W-(maxX+minX)*zoom)/2;pan.y=(H-(maxY+minY)*zoom)/2;
 applyT();renderEdges();updateZoom();
 }
 
-// ═══════════════════════════
-// TOOLBAR BUTTONS
-// ═══════════════════════════
-document.getElementById(‘bt-connect’).addEventListener(‘click’,()=>setConnectMode(!connectMode));
-document.getElementById(‘bt-zi’).addEventListener(‘click’,()=>{zoom=Math.min(3,zoom*1.15);applyT();renderEdges();updateZoom();});
-document.getElementById(‘bt-zo’).addEventListener(‘click’,()=>{zoom=Math.max(.1,zoom/1.15);applyT();renderEdges();updateZoom();});
-document.getElementById(‘bt-fit’).addEventListener(‘click’,fitView);
-document.getElementById(‘bt-chat’).addEventListener(‘click’,()=>addCard(‘chat’,{title:‘AI Chat’,messages:[]}));
-document.getElementById(‘bt-note’).addEventListener(‘click’,()=>addCard(‘note’,{title:‘Note’,text:’’}));
-document.getElementById(‘bt-spider’).addEventListener(‘click’,()=>{const l=prompt(‘Node label:’,‘Idea’);if(!l)return;const r=prompt(‘Role: main / sub / idea’,‘sub’)||‘sub’;addCard(‘spider’,{label:l,role:r});});
-document.getElementById(‘bt-url’).addEventListener(‘click’,addURLCard);
-document.getElementById(‘bt-select’).addEventListener(‘click’,()=>{setConnectMode(false);});
+bindBtn(‘bt-select’,()=>setConnectMode(false));
+bindBtn(‘bt-connect’,()=>setConnectMode(!connectMode));
+bindBtn(‘bt-zi’,()=>{zoom=Math.min(3,zoom*1.15);applyT();renderEdges();updateZoom();});
+bindBtn(‘bt-zo’,()=>{zoom=Math.max(.1,zoom/1.15);applyT();renderEdges();updateZoom();});
+bindBtn(‘bt-fit’,fitView);
+bindBtn(‘bt-chat’,()=>addCard(‘chat’,{title:‘AI Chat’,messages:[]}));
+bindBtn(‘bt-note’,()=>addCard(‘note’,{title:‘Note’,text:’’}));
+bindBtn(‘bt-spider’,()=>{const l=prompt(‘Node label:’,‘Idea’);if(!l)return;const r=prompt(‘Role: main / sub / idea’,‘sub’)||‘sub’;addCard(‘spider’,{label:l,role:r});});
+bindBtn(‘bt-url’,addURLCard);
+bindBtn(‘btn-save’,()=>{const name=document.getElementById(‘canvas-name’).value||‘Untitled’;localStorage.setItem(‘fib_’+name,JSON.stringify({cards,edges,nextId}));showToast(‘Saved ✓’);});
+bindBtn(‘btn-load’,()=>{const name=document.getElementById(‘canvas-name’).value||‘Untitled’;const s=localStorage.getItem(‘fib_’+name);if(!s){showToast(‘Nothing saved’);return;}const d=JSON.parse(s);cards=d.cards;edges=d.edges;nextId=d.nextId||1;world.innerHTML=’’;eg.innerHTML=’’;cards.forEach(c=>buildCard(c));renderEdges();updateCenterUI();fitView();showToast(‘Loaded ✓’);});
+bindBtn(‘btn-new’,()=>{if(cards.length&&!confirm(‘New canvas?’))return;cards=[];edges=[];world.innerHTML=’’;eg.innerHTML=’’;document.getElementById(‘canvas-name’).value=‘Untitled’;updateCenterUI();showToast(‘New canvas’);});
 
-// ═══════════════════════════
-// CENTER PROMPT
-// ═══════════════════════════
 function addURLCard(){
 const url=prompt(‘Paste a URL:’,‘https://’);if(!url||url===‘https://’)return;
 const platform=detectPlatform(url);
@@ -556,23 +477,23 @@ const c=addCard(‘url’,{url,platform,cardTitle:pNames[platform]||‘Link’,s
 if(platform===‘art’||platform===‘yt’||platform===‘x’)setTimeout(()=>aiSummarise(c.id),400);
 }
 
+function doMainSend(){
+const inp=document.getElementById(‘main-input’);
+const text=inp.value.trim();if(!text)return;
+inp.value=’’;
+const c=addCard(‘chat’,{title:‘AI Chat’,messages:[]});
+setTimeout(()=>chatSend(c,text),100);
+}
+
 document.querySelectorAll(’.sug-pill’).forEach(pill=>{
-pill.addEventListener(‘click’,()=>{
-if(pill.dataset.url){addURLCard();return;}
-const inp=document.getElementById(‘main-input’);if(inp)inp.value=pill.dataset.prompt||’’;
-document.getElementById(‘main-send’).click();
-});
+const fn=()=>{if(pill.dataset.url){addURLCard();return;}const inp=document.getElementById(‘main-input’);if(inp)inp.value=pill.dataset.prompt||’’;doMainSend();};
+pill.addEventListener(‘click’,fn);
+pill.addEventListener(‘touchend’,e=>{e.preventDefault();fn();});
 });
 
-document.getElementById(‘main-send’).addEventListener(‘click’,()=>{
-const inp=document.getElementById(‘main-input’);const text=inp.value.trim();if(!text)return;
-inp.value=’’;const c=addCard(‘chat’,{title:‘AI Chat’,messages:[]});setTimeout(()=>chatSend(c,text),100);
-});
-document.getElementById(‘main-input’).addEventListener(‘keydown’,e=>{if(e.key===‘Enter’)document.getElementById(‘main-send’).click();});
+bindBtn(‘main-send’,doMainSend);
+document.getElementById(‘main-input’).addEventListener(‘keydown’,e=>{if(e.key===‘Enter’)doMainSend();});
 
-// ═══════════════════════════
-// AI: CHAT
-// ═══════════════════════════
 async function chatSend(c,text){
 if(!c.data.messages)c.data.messages=[];
 c.data.messages.push({role:‘user’,text});
@@ -585,10 +506,7 @@ msgBox.appendChild(th);msgBox.scrollTop=msgBox.scrollHeight;
 try{
 const hist=c.data.messages.slice(0,-1).map(m=>({role:m.role===‘user’?‘user’:‘assistant’,content:m.text}));
 hist.push({role:‘user’,content:text});
-const data=await callAPI({
-system:`You are a research assistant on The Fibonacci Web. For matrix requests respond ONLY with JSON: {"type":"matrix","title":"...","cols":["A","B"],"rows":[{"label":"Row","cells":["a","b"]}]} Otherwise use plain text with **bold** and ### headers. Be concise.`,
-messages:hist,max_tokens:1200
-});
+const data=await callAPI({system:`You are a research assistant on The Fibonacci Web. For matrix requests respond ONLY with JSON: {"type":"matrix","title":"...","cols":["A","B"],"rows":[{"label":"Row","cells":["a","b"]}]} Otherwise use plain text with **bold** and ### headers. Be concise.`,messages:hist,max_tokens:1200});
 const raw=data.content?.filter(b=>b.type===‘text’).map(b=>b.text).join(’\n’)||‘No response.’;
 document.getElementById(‘think-’+c.id)?.remove();
 let parsed=null;try{if(raw.trim().startsWith(’{’))parsed=JSON.parse(raw.trim());}catch(e){}
@@ -609,9 +527,6 @@ if(msgBox){const am=document.createElement(‘div’);am.className=‘msg a’;a
 }
 }
 
-// ═══════════════════════════
-// AI: SUMMARISE URL
-// ═══════════════════════════
 async function aiSummarise(id){
 const c=cards.find(x=>x.id===id);if(!c)return;showToast(‘Researching…’);
 const p=c.data.platform;
@@ -626,9 +541,6 @@ edges.push({id:euid(),from:id,to:nc.id});renderEdges();showToast(‘Done ✓’)
 }catch(err){showToast(’Error: ’+err.message);}
 }
 
-// ═══════════════════════════
-// AI: EXPAND TO MAP
-// ═══════════════════════════
 async function aiExpand(id){
 const c=cards.find(x=>x.id===id);if(!c)return;showToast(‘Building map…’);
 try{
@@ -650,25 +562,6 @@ edges.push({id:euid(),from:sub.id,to:ic.id});
 renderEdges();fitView();showToast(‘Done ✓’);
 }catch(err){showToast(’Error: ’+err.message);}
 }
-
-// ═══════════════════════════
-// SAVE / LOAD
-// ═══════════════════════════
-document.getElementById(‘btn-save’).addEventListener(‘click’,()=>{
-const name=document.getElementById(‘canvas-name’).value||‘Untitled’;
-localStorage.setItem(‘fib_’+name,JSON.stringify({cards,edges,nextId}));showToast(‘Saved ✓’);
-});
-document.getElementById(‘btn-load’).addEventListener(‘click’,()=>{
-const name=document.getElementById(‘canvas-name’).value||‘Untitled’;
-const s=localStorage.getItem(‘fib_’+name);if(!s){showToast(‘Nothing saved’);return;}
-const d=JSON.parse(s);cards=d.cards;edges=d.edges;nextId=d.nextId||1;
-world.innerHTML=’’;eg.innerHTML=’’;cards.forEach(c=>buildCard(c));renderEdges();updateCenterUI();fitView();showToast(‘Loaded ✓’);
-});
-document.getElementById(‘btn-new’).addEventListener(‘click’,()=>{
-if(cards.length&&!confirm(‘New canvas?’))return;
-cards=[];edges=[];world.innerHTML=’’;eg.innerHTML=’’;
-document.getElementById(‘canvas-name’).value=‘Untitled’;updateCenterUI();showToast(‘New canvas’);
-});
 
 document.addEventListener(‘keydown’,e=>{
 if(e.key===‘Escape’)setConnectMode(false);
